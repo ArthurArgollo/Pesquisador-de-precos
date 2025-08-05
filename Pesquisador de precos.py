@@ -35,7 +35,7 @@ def buscar_precos_mercado_livre(produto):
         titulo = item.get_text(strip=True)
         link = item.get('href')
 
-        # Achar o bloco pai para tentar puxar o preço
+        # Acha o bloco pai para tentar puxar o preço
         parent = item.find_parent('li')
         preco_tag = parent.select_one('span.andes-money-amount__fraction') if parent else None
 
@@ -55,4 +55,5 @@ def buscar_precos_mercado_livre(produto):
 
 # Teste
 produto = input("Escreva o nome do produto:")
+
 buscar_precos_mercado_livre(produto)
